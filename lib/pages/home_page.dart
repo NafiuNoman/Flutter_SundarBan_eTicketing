@@ -7,12 +7,15 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     Size size = MediaQuery.of(context).size;
     return Scaffold(
+      //take the space of of app bar by the lower widget
+      extendBodyBehindAppBar: true,
       appBar: AppBar(
         leading: const Icon(Icons.menu),
         elevation: 0,
-        backgroundColor: Colors.green[800],
+        backgroundColor: Colors.transparent,
       ),
       body: Column(
         children: [
@@ -26,9 +29,9 @@ class HomePage extends StatelessWidget {
                   decoration: const BoxDecoration(
                     // color: Colors.grey,
                     image: DecorationImage(
-                      
-                      colorFilter: ColorFilter.mode(Color.fromRGBO(78, 135, 84, 0.8),BlendMode.multiply),
-
+                        colorFilter: ColorFilter.mode(
+                            Color.fromRGBO(78, 135, 84, 0.8),
+                            BlendMode.srcOver),
                         image: AssetImage('assets/images/main_heading_pic.jpg'),
                         fit: BoxFit.cover),
                   ),
@@ -50,60 +53,83 @@ class HomePage extends StatelessWidget {
                           decoration: BoxDecoration(
                             color: const Color.fromRGBO(30, 60, 9, 0.5),
                             borderRadius: BorderRadius.circular(5),
-                            border: Border.all(
-                              color: Colors.blue,
-                              width: 1.5,
-                            ),
-                            boxShadow: const [
+                            // border: Border.all(
+                            //   color: Colors.blue,
+                            //   width: 1.5,
+                            // ),
+                            boxShadow: [
                               BoxShadow(
-                                blurRadius: 5,
-                                color: Color.fromRGBO(0, 0, 0, 0.25),
+                                //shadow direction
+                                offset: const Offset(0, 4),
+                                blurRadius: 4,
+                                spreadRadius: 0,
+                                color: Colors.black.withOpacity(0.25),
                               )
                             ],
                             image: const DecorationImage(
-                                opacity: 0.5,
+                                colorFilter: ColorFilter.mode(
+                                    Color.fromRGBO(3, 60, 9, 0.5),
+                                    BlendMode.srcOver),
+                                // opacity: 0.5,
                                 image: AssetImage(
                                     'assets/images/one_day_btn_pic.jpg'),
                                 fit: BoxFit.cover),
                           ),
-                          height: 180.0,
-                          width: 150.0,
+                          height: 190.0,
+                          width: 155.0,
                           child: Padding(
-                            padding: const EdgeInsets.all(8.0),
+                            padding: const EdgeInsets.all(10.0),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-
-                              children:
-                              [
-                              Text('ONE-DAY TOUR',textAlign: TextAlign.start,style: btnTxtTitle,),
-
-                              Text('Sightseeing, & Time-savvy option being close to the nature',textAlign: TextAlign.start,style: btnTxtDes,),
-
-
-                            ],),
+                              children: [
+                                Text(
+                                  'ONE-DAY TOUR',
+                                  textAlign: TextAlign.start,
+                                  style: btnTxtTitle,
+                                ),
+                                Text(
+                                  'Sightseeing, & Time-savvy option being close to the nature',
+                                  textAlign: TextAlign.start,
+                                  style: btnTxtDes,
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                         Container(
-                          height: 180.0,
-                          width: 150.0,
+                          height: 190.0,
+                          width: 155.0,
                           decoration: BoxDecoration(
-                            color: Colors.purpleAccent,
-                            borderRadius: BorderRadius.circular(5),
-                            image: const DecorationImage(
-                              image: AssetImage(
-                                  'assets/images/over_night_btn_pic.jpg'),
-                              fit: BoxFit.cover
-                            ),
-                          ),
+                              borderRadius: BorderRadius.circular(5),
+                              image: const DecorationImage(
+                                  image: AssetImage(
+                                      'assets/images/over_night_btn_pic.jpg'),
+                                  fit: BoxFit.cover),
+                              boxShadow: [
+                                BoxShadow(
+                                  offset: const Offset(0, 4),
+                                  blurRadius: 4,
+                                  spreadRadius: 0,
+                                  color: Colors.black.withOpacity(0.25),
+                                )
+                              ]),
                           child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly,children: [
-                              Text('OVERNIGH TOUR',textAlign: TextAlign.start,style: btnTxtTitle,),
-                              Text('Boating, Night safari, Sightseeing, and Staying in Sundarbans',textAlign: TextAlign.start,style:btnTxtDes ,),
-
-
-
-                            ],),
+                            padding: const EdgeInsets.all(10.0),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Text(
+                                  'OVERNIGHT TOUR',
+                                  textAlign: TextAlign.start,
+                                  style: btnTxtTitle,
+                                ),
+                                Text(
+                                  'Boating, Night safari, Sightseeing, and Staying in Sundarbans',
+                                  textAlign: TextAlign.start,
+                                  style: btnTxtDes,
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ],
