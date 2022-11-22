@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import '../utils/text_styles.dart';
 
@@ -7,6 +8,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final pColor = Color.fromRGBO(78, 135, 84, 1);
 
     Size size = MediaQuery.of(context).size;
     return Scaffold(
@@ -20,7 +22,7 @@ class HomePage extends StatelessWidget {
       body: Column(
         children: [
           SizedBox(
-            height: 350,
+            height: 390,
             child: Stack(
               children: [
                 Container(
@@ -30,6 +32,7 @@ class HomePage extends StatelessWidget {
                     // color: Colors.grey,
                     image: DecorationImage(
                         colorFilter: ColorFilter.mode(
+                            // pColor.withOpacity(0.8),
                             Color.fromRGBO(78, 135, 84, 0.8),
                             BlendMode.srcOver),
                         image: AssetImage('assets/images/main_heading_pic.jpg'),
@@ -43,7 +46,7 @@ class HomePage extends StatelessWidget {
                   )),
                 ),
                 Positioned.fill(
-                  top: 150,
+                  top: 200,
                   child: Padding(
                     padding: const EdgeInsets.all(12.0),
                     child: Row(
@@ -142,11 +145,50 @@ class HomePage extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.all(12.0),
-            child: Container(height: 100.0, color: Colors.red),
+            child: Container(
+              height: 100.0,
+              decoration: BoxDecoration(
+                  color: pColor,
+                  borderRadius: BorderRadius.circular(5),
+                  boxShadow: [
+                    BoxShadow(
+                      blurRadius: 9,
+                      spreadRadius: 0,
+                      color: Colors.black.withOpacity(0.25),
+                    )
+                  ]),
+              child: ListTile(
+                title: Text(
+                  'MY TICKETS',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontFamily: robotoCon,
+                    fontSize: 20,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+                subtitle: Text('Get Your One-Day Tour Ticket',style: TextStyle(color: Color.fromRGBO(167, 212, 172, 1)),),
+                // trailing: SvgPicture.asset('assets/images/ticket.svg',color: Colors.purpleAccent,width: 20,height: 20,),
+                trailing: Transform.rotate(angle:100,child: Icon(Icons.airplane_ticket,size: 52,color: Colors.white,)),
+              ),
+            ),
           ),
           Padding(
             padding: const EdgeInsets.all(12.0),
-            child: Container(height: 100.0, color: Colors.deepPurple),
+            child: Container(
+              height: 100.0,
+              decoration: BoxDecoration(
+                border: Border.all(
+                    width: 1.0, color: const Color.fromRGBO(3, 60, 9, 0.5)),
+                color: const Color.fromRGBO(167, 212, 172, 0.2),
+                borderRadius: BorderRadius.circular(5),
+              ),
+              child: ListTile(
+                leading: Icon(Icons.person),
+                title: Text('My Profile',style: TextStyle(color: pColor,fontFamily: robotoCon,fontWeight: FontWeight.w700),),
+                subtitle: Text('Tap to See your Profile'),
+              ),
+            ),
           ),
         ],
       ),
