@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_sundarban/pages/splash_screen_page.dart';
 
 import 'pages/home_page.dart';
 
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const HomePage(),
+      home: const SplashScreen(),
     );
   }
 }

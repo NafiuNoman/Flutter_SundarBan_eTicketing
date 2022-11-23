@@ -1,0 +1,1 @@
+ String mainHeadingPic = 'assets/images/main_heading_pic.jpg';

@@ -15,7 +15,7 @@ class HomePage extends StatelessWidget {
       //take the space of of app bar by the lower widget
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-        leading: const Icon(Icons.menu),
+        leading: const Icon(Icons.menu_rounded,size: 39,),
         elevation: 0,
         backgroundColor: Colors.transparent,
       ),
@@ -28,7 +28,7 @@ class HomePage extends StatelessWidget {
                 Container(
                   height: 250,
                   width: double.infinity,
-                  decoration: const BoxDecoration(
+                  decoration:  const BoxDecoration(
                     // color: Colors.grey,
                     image: DecorationImage(
                         colorFilter: ColorFilter.mode(
@@ -148,28 +148,46 @@ class HomePage extends StatelessWidget {
             child: Container(
               height: 100.0,
               decoration: BoxDecoration(
-                  color: pColor,
-                  borderRadius: BorderRadius.circular(5),
-                  boxShadow: [
-                    BoxShadow(
-                      blurRadius: 9,
-                      spreadRadius: 0,
-                      color: Colors.black.withOpacity(0.25),
-                    )
-                  ]),
-              child: ListTile(
-                title: Text(
-                  'MY TICKETS',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontFamily: robotoCon,
-                    fontSize: 20,
-                    fontWeight: FontWeight.w700,
+                color: pColor,
+                // color: Colors.transparent,
+                borderRadius: BorderRadius.circular(5),
+                boxShadow: [
+                  BoxShadow(
+                    blurStyle: BlurStyle.outer,
+                    spreadRadius: 0,
+                    blurRadius: 9,
+                    color: Colors.black.withOpacity(0.25),
                   ),
+                ],
+              ),
+              child: Center(
+                child: ListTile(
+                  title: const Text(
+                    'MY TICKETS',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontFamily: robotoBold,
+                      fontSize: 20,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                  subtitle: const Text(
+                    'Get Your One-Day Tour Ticket',
+                    style: TextStyle(
+                        color: Color.fromRGBO(167, 212, 172, 1),
+                        fontFamily: robotoReg,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 16),
+                  ),
+                  // trailing: SvgPicture.asset('assets/images/ticket.svg',color: Colors.purpleAccent,width: 20,height: 20,),
+                  trailing: Transform.rotate(
+                      angle: 100,
+                      child: const Icon(
+                        Icons.airplane_ticket,
+                        size: 48,
+                        color: Colors.white,
+                      )),
                 ),
-                subtitle: Text('Get Your One-Day Tour Ticket',style: TextStyle(color: Color.fromRGBO(167, 212, 172, 1)),),
-                // trailing: SvgPicture.asset('assets/images/ticket.svg',color: Colors.purpleAccent,width: 20,height: 20,),
-                trailing: Transform.rotate(angle:100,child: Icon(Icons.airplane_ticket,size: 52,color: Colors.white,)),
               ),
             ),
           ),
@@ -179,14 +197,51 @@ class HomePage extends StatelessWidget {
               height: 100.0,
               decoration: BoxDecoration(
                 border: Border.all(
-                    width: 1.0, color: const Color.fromRGBO(3, 60, 9, 0.5)),
+                  width: 1.0,
+                  color: const Color.fromRGBO(3, 60, 9, 0.5),
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    blurStyle: BlurStyle.outer,
+                    spreadRadius: 0,
+                    blurRadius: 9,
+                    color: Colors.black.withOpacity(0.25),
+                  ),
+                ],
                 color: const Color.fromRGBO(167, 212, 172, 0.2),
                 borderRadius: BorderRadius.circular(5),
               ),
-              child: ListTile(
-                leading: Icon(Icons.person),
-                title: Text('My Profile',style: TextStyle(color: pColor,fontFamily: robotoCon,fontWeight: FontWeight.w700),),
-                subtitle: Text('Tap to See your Profile'),
+              child: Center(
+                child: ListTile(
+                  leading: Icon(
+                    Icons.person_pin,
+                    size: 60,
+                    color: pColor,
+                  ),
+                  title: Text(
+                    'My Profile',
+                    style: TextStyle(
+                      color: pColor,
+                      fontFamily: robotoBold,
+                      fontWeight: FontWeight.w700,
+                      fontSize: 20,
+                    ),
+                  ),
+                  subtitle: Text(
+                    'Tap to See your Profile',
+                    style: TextStyle(
+                      color: pColor,
+                      fontFamily: robotoReg,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                  trailing: const Icon(
+                    Icons.navigate_next_outlined,
+                    size: 40,
+                    color: Color.fromRGBO(153, 153, 153, 1),
+                  ),
+                ),
               ),
             ),
           ),
