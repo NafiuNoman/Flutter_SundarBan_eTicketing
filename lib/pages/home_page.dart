@@ -8,13 +8,14 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final pColor = Color.fromRGBO(78, 135, 84, 1);
+
 
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       //take the space of of app bar by the lower widget
       extendBodyBehindAppBar: true,
       appBar: AppBar(
+
         leading: const Icon(Icons.menu_rounded,size: 39,),
         elevation: 0,
         backgroundColor: Colors.transparent,

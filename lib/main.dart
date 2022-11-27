@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:my_sundarban/pages/one_day_tour/form_page.dart';
 import 'package:my_sundarban/pages/splash_screen_page.dart';
-
 import 'pages/home_page.dart';
 
 void main() {
@@ -17,21 +17,15 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        textTheme: TextTheme(),
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
+        // textTheme: TextTheme(),
         primarySwatch: Colors.blue,
       ),
-      home: const SplashScreen(),
+      //cant put Scaffold in the root because we need to change app bar in some pages
+      //which part of the app will be same for all pages can only be put in the root
+      home: const SafeArea(
+          child: OneDayTourTicketFormPage(),
+        ),
+
     );
   }
 }
-
-

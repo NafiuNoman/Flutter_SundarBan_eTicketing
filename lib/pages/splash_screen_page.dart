@@ -6,6 +6,9 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+   final controlar =   TextEditingController();
+
     return Scaffold(
       body: Container(
         height: double.infinity,
@@ -23,8 +26,9 @@ class SplashScreen extends StatelessWidget {
             const Spacer(
               flex: 3,
             ),
+            TextFormField(),
             //image
-            const Image(
+             const Image(
               width: 71,
               height: 83,
               image: AssetImage(
