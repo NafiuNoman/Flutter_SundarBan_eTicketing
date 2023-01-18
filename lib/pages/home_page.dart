@@ -39,7 +39,7 @@ class HomePage extends StatelessWidget {
                         image: AssetImage('assets/images/main_heading_pic.jpg'),
                         fit: BoxFit.cover),
                   ),
-                  child: Center(
+                  child: const Center(
                       child: Text(
                     'CARE NATURE AS IT CARES YOU',
                     textAlign: TextAlign.center,
@@ -85,7 +85,7 @@ class HomePage extends StatelessWidget {
                             padding: const EdgeInsets.all(10.0),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
+                              children: const [
                                 Text(
                                   'ONE-DAY TOUR',
                                   textAlign: TextAlign.start,
@@ -121,7 +121,7 @@ class HomePage extends StatelessWidget {
                             padding: const EdgeInsets.all(10.0),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
+                              children: const [
                                 Text(
                                   'OVERNIGHT TOUR',
                                   textAlign: TextAlign.start,
@@ -212,7 +212,7 @@ class HomePage extends StatelessWidget {
                 color: const Color.fromRGBO(167, 212, 172, 0.2),
                 borderRadius: BorderRadius.circular(5),
               ),
-              child: Center(
+              child: const Center(
                 child: ListTile(
                   leading: Icon(
                     Icons.person_pin,
@@ -237,7 +237,7 @@ class HomePage extends StatelessWidget {
                       fontWeight: FontWeight.w400,
                     ),
                   ),
-                  trailing: const Icon(
+                  trailing: Icon(
                     Icons.navigate_next_outlined,
                     size: 40,
                     color: Color.fromRGBO(153, 153, 153, 1),
