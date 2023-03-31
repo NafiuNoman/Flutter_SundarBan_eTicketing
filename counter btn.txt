@@ -1,0 +1,110 @@
+import 'package:flutter/material.dart';
+
+class MyPlusMinusBtn extends StatelessWidget {
+  const MyPlusMinusBtn({
+    Key? key,
+    required this.value,  this.width=120,
+  }) : super(key: key);
+
+  final int value;
+  final double width;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: width,
+      child: IntrinsicHeight(
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Flexible(
+              fit: FlexFit.tight,
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: const BorderRadius.only(
+                    topLeft: Radius.circular(4),
+                    bottomLeft: Radius.circular(4),
+                  ),
+                  border: Border.all(
+                    color: const Color.fromRGBO(218, 218, 218, 1),
+                  ),
+                ),
+                child: const IconButton(
+                  onPressed: null,
+                  icon: Icon(Icons.add),
+                  color: Colors.black12,
+                ),
+              ),
+            ),
+            Flexible(
+              fit: FlexFit.tight,
+              child: Container(
+                decoration: const BoxDecoration(
+                  color: Colors.white,
+                  border: Border(
+                    bottom: BorderSide(
+                      color: Color.fromRGBO(218, 218, 218, 1),
+                    ),
+                    top: BorderSide(
+                      color: Color.fromRGBO(218, 218, 218, 1),
+                    ),
+                  ),
+                ),
+                child: Center(
+                  child: Text(
+                    '$value',
+                    style: const TextStyle(
+                      color: Colors.black,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ),
+            ),
+            Flexible(
+              fit: FlexFit.tight,
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: const BorderRadius.only(
+                    topRight: Radius.circular(4),
+                    bottomRight: Radius.circular(4),
+                  ),
+                  border: Border.all(
+                    color: const Color.fromRGBO(218, 218, 218, 1),
+                  ),
+                ),
+                child: const IconButton(
+                  onPressed: null,
+                  icon: Icon(Icons.remove),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+
+
+// Padding(
+// padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
+// child: Container(
+// height: 80,
+// width: 400,
+// decoration: BoxDecoration(
+// border: Border.all(
+// color: const Color.fromRGBO(218, 218, 218, 1),
+// ),
+// borderRadius: BorderRadius.circular(4)),
+// child: Column(
+// crossAxisAlignment: CrossAxisAlignment.start,
+// children: [
+// Text('Local tourist'),
+// Text('৳20 + VAT 15% = ৳23/person',style: TextStyle(color: Color.fromRGBO(102, 102, 102, 1)),),
+// ],
+// ),
+// ),
+// )
